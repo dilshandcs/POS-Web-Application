@@ -1,0 +1,111 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Created with Jaspersoft Studio version 6.4.0.final using JasperReports Library version 6.4.1  -->
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="subr" pageWidth="260" pageHeight="421" columnWidth="260" leftMargin="0" rightMargin="0" topMargin="0" bottomMargin="0" uuid="f0abbaef-8c81-41ac-af94-1aeebce5eb93">
+	<property name="com.jaspersoft.studio.data.defaultdataadapter" value="DataAdapter.xml"/>
+	<property name="com.jaspersoft.studio.unit." value="pixel"/>
+	<property name="com.jaspersoft.studio.unit.pageHeight" value="pixel"/>
+	<property name="com.jaspersoft.studio.unit.pageWidth" value="pixel"/>
+	<property name="com.jaspersoft.studio.unit.topMargin" value="pixel"/>
+	<property name="com.jaspersoft.studio.unit.bottomMargin" value="pixel"/>
+	<property name="com.jaspersoft.studio.unit.leftMargin" value="pixel"/>
+	<property name="com.jaspersoft.studio.unit.rightMargin" value="pixel"/>
+	<property name="com.jaspersoft.studio.unit.columnWidth" value="pixel"/>
+	<property name="com.jaspersoft.studio.unit.columnSpacing" value="pixel"/>
+	<queryString language="json">
+		<![CDATA[SoldItemDtoList.soldItemDtos]]>
+	</queryString>
+	<field name="itemId" class="java.lang.String">
+		<property name="net.sf.jasperreports.json.field.expression" value="itemId"/>
+		<fieldDescription><![CDATA[itemId]]></fieldDescription>
+	</field>
+	<field name="itemDesc" class="java.lang.String">
+		<property name="net.sf.jasperreports.json.field.expression" value="itemDesc"/>
+		<fieldDescription><![CDATA[itemDesc]]></fieldDescription>
+	</field>
+	<field name="price" class="java.lang.Double">
+		<property name="net.sf.jasperreports.json.field.expression" value="price"/>
+		<fieldDescription><![CDATA[price]]></fieldDescription>
+	</field>
+	<field name="total" class="java.lang.Double">
+		<property name="net.sf.jasperreports.json.field.expression" value="total"/>
+		<fieldDescription><![CDATA[total]]></fieldDescription>
+	</field>
+	<field name="qty" class="java.lang.Integer">
+		<property name="net.sf.jasperreports.json.field.expression" value="qty"/>
+		<fieldDescription><![CDATA[qty]]></fieldDescription>
+	</field>
+	<columnHeader>
+		<band height="17">
+			<property name="com.jaspersoft.studio.unit.height" value="pixel"/>
+			<rectangle>
+				<reportElement x="0" y="0" width="260" height="14" forecolor="#DBD5D5" backcolor="#DBD5D5" uuid="7be60ce5-d2cd-4260-a484-ed433e5e8a8a"/>
+			</rectangle>
+			<staticText>
+				<reportElement x="7" y="0" width="82" height="14" uuid="af6a919e-cbc4-405c-ad4c-b54e015b62f7"/>
+				<textElement textAlignment="Center">
+					<font fontName="Calibri" size="9" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Description]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="117" y="0" width="26" height="14" uuid="a81fccda-eeff-404f-94a0-9a6806ac107d"/>
+				<textElement textAlignment="Center">
+					<font fontName="Calibri" size="9" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Qty]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="146" y="0" width="54" height="14" uuid="3cd8ec40-cd63-4517-b09c-e62a598850f7"/>
+				<textElement textAlignment="Right">
+					<font fontName="Calibri" size="9" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Price]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="203" y="0" width="54" height="14" uuid="fcae735d-6543-40a0-8036-cc9e6d5647c8"/>
+				<textElement textAlignment="Right">
+					<font fontName="Calibri" size="9" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Sub Total]]></text>
+			</staticText>
+		</band>
+	</columnHeader>
+	<detail>
+		<band height="21">
+			<textField>
+				<reportElement x="6" y="1" width="80" height="14" uuid="3c44001e-a7e1-496c-81f8-685dc723f1c6"/>
+				<textElement textAlignment="Left">
+					<font fontName="Calibri" size="8"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{itemDesc}]]></textFieldExpression>
+			</textField>
+			<line>
+				<reportElement x="0" y="16" width="260" height="1" forecolor="rgba(0, 0, 0, 0.79607844)" uuid="5d40a4e9-9ff9-497b-afb2-936de95bbf43"/>
+				<graphicElement>
+					<pen lineWidth="0.5"/>
+				</graphicElement>
+			</line>
+			<textField>
+				<reportElement x="117" y="1" width="27" height="14" uuid="21d330be-6d8c-465a-a63a-7de969a0b1c3"/>
+				<textElement textAlignment="Center">
+					<font fontName="Calibri" size="8"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{qty}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="147" y="1" width="54" height="14" uuid="4cc56881-9482-4e4f-9c41-da38ceb50822"/>
+				<textElement textAlignment="Right">
+					<font fontName="Calibri" size="8"/>
+				</textElement>
+				<textFieldExpression><![CDATA[String.format("%.2f",$F{price})]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="203" y="1" width="54" height="14" uuid="98a484de-d5ee-4099-8783-f794bb7905d4"/>
+				<textElement textAlignment="Right">
+					<font fontName="Calibri" size="8"/>
+				</textElement>
+				<textFieldExpression><![CDATA[String.format("%.2f",$F{total})]]></textFieldExpression>
+			</textField>
+		</band>
+	</detail>
+</jasperReport>
